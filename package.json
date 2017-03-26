@@ -10,8 +10,11 @@
     "start": "node index.js"
   },
   "dependencies": {
+    "cors": "^2.8.1",
     "express": "4.13.3",
-    "pug": "^2.0.0-beta11"
+    "pug": "^2.0.0-beta11",
+    "request": "^2.81.0",
+    "request-promise": "^4.2.0"
   },
   "repository": {
     "type": "git",
