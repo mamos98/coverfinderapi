@@ -8,7 +8,7 @@ app.set('port', (process.env.PORT || 5000));
 app.use(express.static(__dirname + '/public'));
 
 // Set CORS
-var whitelist = ['http://localhost:4200', 'http://masoudmirzei.ir'];
+var whitelist = ['http://localhost:4200', 'http://masoudmirzaei.ir'];
 var corsOptions = {
   origin: function(origin, callback){
     var originIsWhitelisted = whitelist.indexOf(origin) !== -1;
