@@ -15,7 +15,8 @@ var corsOptions = {
     callback(originIsWhitelisted ? null : 'Bad Request', originIsWhitelisted);
   }
 };
-app.use(cors());
+
+app.use(cors(corsOptions));
 
 // Set View Configurations
 app.set('views', __dirname + '/views');
