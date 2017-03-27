@@ -51,7 +51,7 @@ app.get('/api/search', cors(corsOptions), function (request, response) {
   )
 });
 
-app.get('/api/albums/:album_id', function (request, response) {
+app.get('/api/albums/:album_id', cors(corsOptions), function (request, response) {
   return rp({
     uri: 'https://api.spotify.com/v1/albums/' + request.params.album_id,
     json: true
