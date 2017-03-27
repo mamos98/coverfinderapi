@@ -16,8 +16,6 @@ var corsOptions = {
   }
 };
 
-app.use(cors(corsOptions));
-
 // Set View Configurations
 app.set('views', __dirname + '/views');
 app.set('view engine', 'pug');
@@ -25,18 +23,18 @@ app.set('view engine', 'pug');
 
 // Set Routes
 // Show Landing Page
-app.get('/', function (request, response) {
+app.get('/', cors(), function (request, response) {
   response.render('main/landing');
 });
 
-app.get('/api', function (request, response) {
+app.get('/api', cors(corsOptions), function (request, response) {
   response.json({
     message: 'This is a Wrapper on Spotify Open APIs for http://masoudmirzei.ir/coverfinder/'
   });
 });
 
 // Set API
-app.get('/api/search', function (request, response) {
+app.get('/api/search', cors(corsOptions), function (request, response) {
   return rp({
     uri: 'https://api.spotify.com/v1/search?q='+ request.query.q + '&type=' + request.query["type"] || 'album',
     json: true
